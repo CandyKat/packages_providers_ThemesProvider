@@ -254,9 +254,8 @@ public class ThemePackageHelper {
                 moveToDefault.add(component);
             }
         }
-        String pkgName = ThemeUtils.getDefaultThemePackageName(context);
         ThemeManager manager = (ThemeManager) context.getSystemService(Context.THEME_SERVICE);
-        manager.requestThemeChange(pkgName, moveToDefault);
+        manager.requestThemeChange("default", moveToDefault);
 
         // Delete the theme from the db
         String selection = ThemesColumns.PKG_NAME + "= ?";
